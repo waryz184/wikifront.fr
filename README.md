@@ -65,27 +65,27 @@ mkdocs build
 gcloud artifacts repositories create frontopedia \
   --repository-format docker \
   --location europe-west1 \
-  --project waryz184project
+  --project waryz184-frontopedia
 ```
 
 ### 4.2 Créer le service account GitHub Actions
 
 ```bash
 # Créer le compte de service
-gcloud iam service-accounts create github-actions-frontopedia \
+gcloud iam service-accounts create hermes \
   --display-name="GitHub Actions - Frontopedia"
 
 # Donner les droits Cloud Run + Artifact Registry
-gcloud projects add-iam-policy-binding waryz184project \
-  --member="serviceAccount:github-actions-frontopedia@waryz184project.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding waryz184-frontopedia \
+  --member="serviceAccount:hermes@waryz184-frontopedia.iam.gserviceaccount.com" \
   --role="roles/run.admin"
 
-gcloud projects add-iam-policy-binding waryz184project \
-  --member="serviceAccount:github-actions-frontopedia@waryz184project.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding waryz184-frontopedia \
+  --member="serviceAccount:hermes@waryz184-frontopedia.iam.gserviceaccount.com" \
   --role="roles/artifactregistry.writer"
 
-gcloud projects add-iam-policy-binding waryz184project \
-  --member="serviceAccount:github-actions-frontopedia@waryz184project.iam.gserviceaccount.com" \
+gcloud projects add-iam-policy-binding waryz184-frontopedia \
+  --member="serviceAccount:hermes@waryz184-frontopedia.iam.gserviceaccount.com" \
   --role="roles/iam.serviceAccountUser"
 ```
 
@@ -95,21 +95,21 @@ gcloud projects add-iam-policy-binding waryz184project \
 # Créer un pool d'identité
 gcloud iam workload-identity-pools create github-pool \
   --location=global \
-  --project=waryz184project
+  --project=waryz184-frontopedia
 
 # Créer un provider OIDC pour GitHub
 gcloud iam workload-identity-pools providers create-oidc github-provider \
   --location=global \
   --workload-identity-pool=github-pool \
-  --project=waryz184project \
+  --project=waryz184-frontopedia \
   --issuer-uri="https://token.actions.githubusercontent.com" \
   --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository"
 
 # Lier le service account au pool
 gcloud iam service-accounts add-iam-policy-binding \
-  github-actions-frontopedia@waryz184project.iam.gserviceaccount.com \
+  hermes@waryz184-frontopedia.iam.gserviceaccount.com \
   --role="roles/iam.workloadIdentityUser" \
-  --member="principalSet://iam.googleapis.com/projects/$(gcloud projects describe waryz184project --format='value(projectNumber)')/locations/global/workloadIdentityPools/github-pool/attribute.repository/waryz184/frontopedia"
+  --member="principalSet://iam.googleapis.com/projects/$(gcloud projects describe waryz184-frontopedia --format='value(projectNumber)')/locations/global/workloadIdentityPools/github-pool/attribute.repository/waryz184/frontopedia"
 ```
 
 Récupérer le WIF_PROVIDER :
@@ -118,7 +118,7 @@ Récupérer le WIF_PROVIDER :
 gcloud iam workload-identity-pools providers describe github-provider \
   --location=global \
   --workload-identity-pool=github-pool \
-  --project=waryz184project \
+  --project=waryz184-frontopedia \
   --format="value(name)"
 ```
 
@@ -129,7 +129,7 @@ Dans les settings du repo GitHub → Settings > Secrets and variables > Actions 
 | Secret | Valeur |
 |--------|--------|
 | `WIF_PROVIDER` | `projects/XXX/locations/global/workloadIdentityPools/github-pool/providers/github-provider` |
-| `SERVICE_ACCOUNT_EMAIL` | `github-actions-frontopedia@waryz184project.iam.gserviceaccount.com` |
+| `SERVICE_ACCOUNT_EMAIL` | `hermes@waryz184-frontopedia.iam.gserviceaccount.com` |
 
 ---
 

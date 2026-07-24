@@ -1,20 +1,10 @@
-site_name: Frontopedia
-site_description: Wiki collaboratif pour ma voiture
-site_url: https://frontopedia.xxxxx.run.app
-repo_url: https://github.com/waryz184/frontopedia
+site_name: Wikifront
+site_description: Wiki collaboratif pour l'Opel Frontera
+site_url: https://frontopedia-121036105819.europe-west1.run.app
+repo_url: https://github.com/waryz184/wikifront.fr
 edit_uri: edit/main/docs/
 
-theme:
-  name: material
-  palette:
-    primary: blue grey
-    accent: blue
-  features:
-    - navigation.instant
-    - navigation.tabs
-    - navigation.indexes
-    - search.highlight
-    - content.code.copy
+theme: readthedocs
 
 plugins:
   - search
@@ -23,23 +13,21 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
-  - pymdownx.tabbed
   - attr_list
   - tables
   - toc:
       permalink: true
 
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/waryz184/frontopedia
-
 nav:
   - Accueil: index.md
-  - Entretien:
-    - Vidange: entretien/vidange.md
-    - Pneus: entretien/pneus.md
-    - Freins: entretien/freins.md
-  - Spécifications:
-    - Moteur: spec/moteur.md
-    - Dimensions: spec/dimensions.md
+  - Diagnostic:
+    - Codes Opel: diagnostic/codes-opel.md
+    - Pannes fréquentes: diagnostic/pannes-frequentes.md
+  - Mécanique:
+    - Motorisation: mecanique/motorisation.md
+    - Huiles et graissage: mecanique/huiles-et-graissage.md
+    - Manuels d'atelier: mecanique/manuels-atelier.md
+  - Frontera A:
+    - Identification VIN: frontera-a/identification-vin.md
+  - Frontera B:
+    - Identification VIN: frontera-b/identification-vin.md
