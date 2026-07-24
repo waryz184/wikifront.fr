@@ -1,0 +1,45 @@
+site_name: Frontopedia
+site_description: Wiki collaboratif pour ma voiture
+site_url: https://frontopedia.xxxxx.run.app
+repo_url: https://github.com/waryz184/frontopedia
+edit_uri: edit/main/docs/
+
+theme:
+  name: material
+  palette:
+    primary: blue grey
+    accent: blue
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.indexes
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/waryz184/frontopedia
+
+nav:
+  - Accueil: index.md
+  - Entretien:
+    - Vidange: entretien/vidange.md
+    - Pneus: entretien/pneus.md
+    - Freins: entretien/freins.md
+  - Spécifications:
+    - Moteur: spec/moteur.md
+    - Dimensions: spec/dimensions.md

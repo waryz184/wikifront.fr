@@ -1,0 +1,11 @@
+# Évite de copier les fichiers inutiles dans le build Docker
+.git/
+__pycache__/
+*.pyc
+.venv*/
+venv/
+site/
+.idea/
+.vscode/
+.DS_Store
+*.md
