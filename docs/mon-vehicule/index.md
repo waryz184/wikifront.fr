@@ -4,7 +4,15 @@ Pages personnelles concernant ma configuration et mon véhicule.
 
 ## Ma Frontera
 
-*À venir — fiches, notes, modifications, et tout ce qui concerne mon exemplaire.*
+![Frontera B 2001 Limited](assets/frontera-b-2001-limited.jpg){: style="max-width:600px"}
+
+**Frontera B — 2001 — Limited**
+
+- **Modèle** : Frontera B 2.2 DT (ou essence) Limited
+- **Année** : 2001
+- **Finition** : Limited
+- **Intérieur** : Cuir
+- **Kilométrage** : 85 000 km
 
 ## Configuration perso
 
