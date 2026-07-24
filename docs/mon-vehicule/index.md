@@ -2,7 +2,7 @@
 
 Pages personnelles concernant ma configuration et mon véhicule.
 
-## Ma Frontera
+## Mon Frontera
 
 ![Frontera B 2001 Limited](assets/frontera-b-2001-limited.jpg){: style="max-width:600px"}
 
