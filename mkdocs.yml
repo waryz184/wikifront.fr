@@ -6,6 +6,9 @@ edit_uri: edit/main/docs/
 
 theme: readthedocs
 
+extra_css:
+  - extra.css
+
 plugins:
   - search
 
