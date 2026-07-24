@@ -16,4 +16,10 @@ Pages personnelles concernant ma configuration et mon véhicule.
 
 ## Configuration perso
 
-*À venir — équipement, accessoires, aménagements.*
+### Barres de toit
+
+![Barres de toit vue avant](assets/barres-toit-avant.jpg){: style="max-width:400px"}
+![Barres de toit vue côté](assets/barres-toit-cote.jpg){: style="max-width:400px"}
+
+- **Pieds** : Norauto 100
+- **Barres** : acier carrées
