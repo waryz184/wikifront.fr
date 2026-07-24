@@ -7,10 +7,10 @@ on:
     branches: [main]
 
 env:
-  PROJECT_ID: waryz184project          # ← À CHANGER : ton ID projet GCP
-  REGION: europe-west1                 # ← À CHANGER : région Cloud Run
+  PROJECT_ID: waryz184-frontopedia
+  REGION: europe-west1
   SERVICE_NAME: frontopedia
-  IMAGE: europe-west1-docker.pkg.dev/waryz184project/cloud-run-source-deploy/frontopedia
+  IMAGE: europe-west1-docker.pkg.dev/waryz184-frontopedia/cloud-run-source-deploy/frontopedia
 
 jobs:
   build-and-deploy:
