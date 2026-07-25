@@ -15,3 +15,25 @@
         margin: 0 auto;
     }
 }
+
+/* Google Translate widget dans le sidebar */
+#google_translate_element .goog-te-gadget-simple {
+    background: #343131;
+    border: 1px solid #555;
+    border-radius: 4px;
+    padding: 4px 8px;
+    display: inline-flex;
+    align-items: center;
+}
+#google_translate_element .goog-te-gadget-simple span {
+    color: #b1b1b1 !important;
+}
+#google_translate_element a {
+    color: #3e8bcd !important;
+}
+.goog-te-banner-frame.skiptranslate {
+    display: none !important;
+}
+body {
+    top: 0px !important;
+}

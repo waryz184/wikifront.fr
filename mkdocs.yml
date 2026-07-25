@@ -9,6 +9,9 @@ theme: readthedocs
 extra_css:
   - extra.css
 
+extra_javascript:
+  - translate.js
+
 plugins:
   - search
 
